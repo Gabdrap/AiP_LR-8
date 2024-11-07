@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char st[6];
+    char ch;
+    cout << "type characters and press Enter: "; // добавил
+    cin >> st;
+    ch = st[0];
+    st[0] = st[4];
+    st[4] = ch;
+    cout << "the result is: " << st << endl; // добавил
+    cin.get();
+    cin.get(); // ожидает ввода
+    return 0;
+}

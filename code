@@ -1,18 +1,47 @@
 #include <iostream>
+#include <Windows.h>
 
 using namespace std;
+char a;
+char b;
+char sum;
+char sym;
 
 int main()
 {
-    char st[6];
-    char ch;
-    cout << "type characters and press Enter: "; // добавил
-    cin >> st;
-    ch = st[0];
-    st[0] = st[4];
-    st[4] = ch;
-    cout << "the result is: " << st << endl; // добавил
-    cin.get();
-    cin.get(); // ожидает ввода
-    return 0;
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    int choise;
+    cout << "1" "\n";
+    cout << "2" "\n";
+    cout << "3" "\n";
+    cout << "Выберите задание" "\n";
+    cin >> choise;
+
+    if (choise == 1)
+    {
+        char st[6];
+        char ch;
+        cout << "type characters and press Enter: ";
+        cin >> st;
+        ch = st[0];
+        st[0] = st[4];
+        st[4] = ch;
+        cout << "the result is: " << st;
+        cin.get();
+        cin.get();
+        return 0;
+    }
+    if (choise == 2)
+    {
+        cout << "Ввeдитe символы: ";
+        cin >> a >> b;
+        int sum = a + b;
+        cout << sum;
+    }
+    if (choise == 3)
+    {
+        cout << "Введите символ: ";
+        cin >> sym;
+    }
 }

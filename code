@@ -1,11 +1,12 @@
 #include <iostream>
 #include <Windows.h>
+#include <iomanip>
 
 using namespace std;
 char a;
 char b;
 char sum;
-char sym;
+char (symbol);
 
 int main()
 {
@@ -42,6 +43,11 @@ int main()
     if (choise == 3)
     {
         cout << "Введите символ: ";
-        cin >> sym;
+        cin >> noskipws >> symbol;
+        (int)symbol;
+        if ((symbol > 31, symbol < 48) || (symbol > 91, symbol < 96))
+        {
+            cout << "Этот символ управляющий";
+        }
     }
 }

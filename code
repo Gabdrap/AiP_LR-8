@@ -1,12 +1,10 @@
 #include <iostream>
 #include <Windows.h>
-#include <iomanip>
 
 using namespace std;
+
 char a;
 char b;
-char sum;
-char (symbol);
 
 int main()
 {
@@ -28,26 +26,38 @@ int main()
         ch = st[0];
         st[0] = st[4];
         st[4] = ch;
-        cout << "the result is: " << st;
-        cin.get();
-        cin.get();
+        cout << "the result is : " << st << endl;
+        cin.get(); // Ожидание ввода для предотвращения мгновенного закрытия консоли
+        cin.get(); // Считываем символ новой строки
         return 0;
     }
     if (choise == 2)
     {
-        cout << "Ввeдитe символы: ";
+        cout << "Введите символы: ";
         cin >> a >> b;
         int sum = a + b;
-        cout << sum;
+        cout << "Сумма: " << sum << endl;
     }
     if (choise == 3)
     {
+        char symbol;
+
         cout << "Введите символ: ";
-        cin >> noskipws >> symbol;
-        (int)symbol;
-        if ((symbol > 31, symbol < 48) || (symbol > 91, symbol < 96))
-        {
-            cout << "Этот символ управляющий";
+        cin.ignore(); // Игнорируем символ новой строки
+        cin.get(symbol); // Считываем один символ
+
+        if ((symbol >= 0 && symbol <= 31) || (symbol >= 127 && symbol <= 159)) {
+            cout << "Этот символ управляющий." << endl;
         }
+        else if (symbol == 32 || (symbol >= 48 && symbol <= 90) || (symbol >= 96 && symbol <= 126)) {
+            cout << "Этот символ не управляющий." << endl;
+        }
+        else {
+            cout << "Этот символ не распознан." << endl;
+        }
+
+        return 0;
     }
+
+    return 0;
 }
